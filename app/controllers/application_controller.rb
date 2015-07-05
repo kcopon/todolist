@@ -6,16 +6,16 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
  
   protected
- 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
-  end
 
   def hello
     render text: "<h1>Hello</h1><p>Welcome home</p>"
   end
 
   def after_sign_in_path_for(resource)
-    tasks_path
+    welcome_index_path
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :name
   end
 end
