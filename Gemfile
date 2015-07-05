@@ -44,6 +44,8 @@ group :development, :test do
   gem 'spring'
 
   gem 'devise'
+  gem 'faker'
+  gem 'pundit'
 end
 
 group :production do
