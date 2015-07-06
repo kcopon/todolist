@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def hello
-    render text: "<h1>Hello</h1><p>Welcome home</p>"
+    redirect_to(welcome_index_path)
   end
 
   protected
