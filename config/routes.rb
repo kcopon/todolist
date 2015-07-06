@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "application#hello"
   
   devise_for :users
+    resources :users, only: [:update]
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
