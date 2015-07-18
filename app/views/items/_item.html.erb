@@ -1,0 +1,12 @@
+<%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
+  <div class="media-left">
+  </div>
+  <div class="media-body">
+    <small>
+      <% if policy(item).destroy? %>
+        <%= link_to "Delete", [item], method: :delete, remote: true %>
+      <% end %>
+    </small>
+    <p><%= item.name %></p>
+  </div>
+<% end %>

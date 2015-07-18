@@ -9,14 +9,8 @@
        </ul>
      </div>
    <% end %>
-   <%= form_group_tag(item.errors[:title]) do %>
      <%= f.label :name %>
      <%= f.text_field :name, class: 'form-control', placeholder: "Enter item title" %>
-   <% end %>
-   <%= form_group_tag(item.errors[:body]) do %>
-     <%= f.label :desciption %>
-     <%= f.text_area :description, rows: 8, class: 'form-control', placeholder: "Enter item body" %>
-   <% end %>
    <div class="form-group">
      <%= f.submit "Save", class: 'btn btn-success' %>
    </div>

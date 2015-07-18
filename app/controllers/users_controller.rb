@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
+
+  #scope :visible_to, -> { where(public: true) }
  
   def update
     if current_user.update_attributes(user_params)
@@ -12,8 +14,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @item = @user.item.visible_to(current_user)
+    @user = current_user
+    @items = current_user.items #.visible_to(current_user)
   end
  
   private
