@@ -8,9 +8,28 @@ class ItemsController < ApplicationController
     else
       flash[:error] = "There was an error saving the item. Please try again."
     end
-
     redirect_to @user
-    
+  end
+
+  
+  
+  def destroy
+    #@user = current_user
+    #@item = current_user.items.build ( item_params )
+    ##@comment = @post.comments.find(params[:id])
+    ##@item = items.find(params[:id])
+    @user = current_user
+    @item = @user.items.find(params[:id])
+    if @item.destroy
+      flash[:notice] = "Item was removed"
+    else
+      flash[:notice] = "There was an error deleting the item"
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end 
   
   private

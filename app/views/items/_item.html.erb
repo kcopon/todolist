@@ -4,7 +4,7 @@
   <div class="media-body">
     <small>
       <% if policy(item).destroy? %>
-        <%= link_to "Delete", [item], method: :delete, remote: true %>
+        <%= link_to "Delete", [item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
       <% end %>
     </small>
     <p><%= item.name %></p>
