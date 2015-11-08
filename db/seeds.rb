@@ -21,7 +21,8 @@ users = User.all
 # Create Topics
 15.times do
  Item.create!(
-   name:         Faker::Lorem.words,
+   name:      Faker::Lorem.words,
+   user:      Users.sample  
  )
 end
 
